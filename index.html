@@ -11,7 +11,7 @@
 	</div>
 			<script>
 				window.addEventListener("beforeunload", function (e) {
-  					var confirmationMessage = "666";
+  					var confirmationMessage = "您还有未保存的工作";
 
   					(e || window.event).returnValue = confirmationMessage; //Gecko + IE
   					return confirmationMessage;                            //Webkit, Safari, Chrome
